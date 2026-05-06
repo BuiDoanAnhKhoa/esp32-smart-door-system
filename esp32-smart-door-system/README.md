@@ -37,15 +37,16 @@ Dự án được chia thành 2 node chính:
 - Hiển thị nhiệt độ, độ ẩm (thông qua Serial Monitor) và trạng thái cửa.
 
 ## 3. Kiến trúc hệ thống
-+-------------------+    ESP-NOW     +-----------------------+
-| ESP1_RFID_Door    | <------------> | ESP2_Keypad_LCD       |
-|-------------------|                |-----------------------|
-| RFID RC522        |                | Keypad 4x4            |
-| Servo Motor       |                | LCD I2C 16x2          |
-| DHT11 Sensor      |                | User Management       |
-| Buzzer            |                | PIN Authentication    |
-| Emergency Button  |                | Access Control Logic  |
-================================================================
+
+Hai ESP32 giao tiếp với nhau bằng ESP-NOW.
+
+| ESP1_RFID_Door | Communication | ESP2_Keypad_LCD |
+|---|---|---|
+| RFID RC522 | ESP-NOW wireless | Keypad 4x4 |
+| Servo Motor | `<------------------->` | LCD I2C 16x2 |
+| DHT11 Sensor |  | User Management |
+| Buzzer |  | PIN Authentication |
+| Emergency Button |  | Access Control Logic |
 
 ## 4. Required Libraries
 Install these libraries in Arduino IDE:
