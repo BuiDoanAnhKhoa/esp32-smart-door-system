@@ -40,13 +40,22 @@ Dự án được chia thành 2 node chính:
 
 Hai ESP32 giao tiếp với nhau bằng **ESP-NOW**.
 
-| ESP1_RFID_Door | Communication | ESP2_Keypad_LCD |
-|---|---|---|
-| RFID RC522 | ESP-NOW wireless | Keypad 4x4 |
-| Servo Motor | ESP-NOW wireless | LCD I2C 16x2 |
-| DHT11 Sensor | ESP-NOW wireless | User Management |
-| Buzzer | ESP-NOW wireless | PIN Authentication |
-| Emergency Button | ESP-NOW wireless | Access Control Logic |
+### Sơ đồ tổng quát
+
+```text
+ESP1_RFID_Door  <------------------->  ESP2_Keypad_LCD
+                ESP-NOW wireless
+```
+
+### Chức năng từng ESP
+
+| ESP1_RFID_Door | ESP2_Keypad_LCD |
+|---|---|
+| RFID RC522 | Keypad 4x4 |
+| Servo Motor | LCD I2C 16x2 |
+| DHT11 Sensor | User Management |
+| Buzzer | PIN Authentication |
+| Emergency Button | Access Control Logic |
 
 ## 4. Required Libraries
 Install these libraries in Arduino IDE:
