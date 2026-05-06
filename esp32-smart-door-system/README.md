@@ -43,8 +43,8 @@ Hai ESP32 giao tiếp với nhau bằng **ESP-NOW**.
 ### Sơ đồ tổng quát
 
 ```text
-ESP1_RFID_Door  <------------------->  ESP2_Keypad_LCD
-                ESP-NOW wireless
+ESP1_RFID_Door  <-------------------->  ESP2_Keypad_LCD
+                   ESP-NOW wireless
 ```
 
 ### Chức năng từng ESP
